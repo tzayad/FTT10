@@ -1,0 +1,26 @@
+!pip install git+https://github.com/tzayad/FTT10.git#egg=ftt10
+# from google.colab import drive
+# drive.mount('/content/drive')
+from ftt10 import functions
+import json
+
+
+filename = 'drive/MyDrive/Colab Notebooks/resources/NASDAQ_in_fives.json' #_Short_test.json'
+with open(filename) as file:
+  Keywords = json.load(file)
+
+Keywords = [['GOOG', 'NVDA', 'AMZN', 'SCOR', 'APOP'],  ["RDUS", "CBIO", "DILA", "GLHA", 'BBC'], ['CHCI', 'INVZ', 'AMD', 'IBM', 'V'], ['ABB', 'GRUB', 'AI', 'DRAY', 'LYL']]
+
+
+  # self.follow_the_trend(self.Keywords)
+Parameters = {'w_minimum_value': float(80), #            90              # self.ui.w_minimum_value.value()),
+                      'w_winnerCoeff': float(10),   #      20      self.ui.w_winnerCoeff.value()),
+                      'w_maybeCoeff': float(10),    #      10       #self.ui.w_maybeCoeff.value()),
+                      'm_minimum_value': float(90), #      90         #self.ui.m_minimum_value.value()),
+                      'm_winner_coeff': float(3.0),   #    3.0         self.ui.m_winner_coeff.value()),
+                      'early': float(0.85),     #          0.85       self.ui.m_early_period.value()),
+                      'saveData': bool(True),#                        bool(self.ui.saveData.isChecked()),
+                      'base_name': 'drive/MyDrive/Colab Notebooks/results/NASDAQ_'
+                      }
+
+functions.run(Keywords , Parameters)
