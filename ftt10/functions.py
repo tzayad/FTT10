@@ -21,9 +21,14 @@ urllib3.disable_warnings()
 # pyinstaller -w --clean  FollowTheTrends3.py
 
 
-def run(Keywords, Parameters, TimeFrame):
+def run(Keywords, Parameters):
     """Long-running task."""
-
+    TimeFrame = {'3m': {'trends': 'today 3-m', 'yahoo': '3mo', 'interval': '1d'},
+              '1m': {'trends': 'today 1-m', 'yahoo': '1mo', 'interval': '1d'},
+              '1wk': {'trends': 'now 7-d', 'yahoo': '1wk', 'interval': '1m'},
+              '1d': {'trends': 'now 1-d', 'yahoo': '1d', 'interval': '1m'},
+              '1h': {'trends': 'now 1-H', 'yahoo': '1h', 'interval': '1m'},
+              }
     small_dfs = pd.DataFrame()
     for i, item in tq.tqdm(enumerate(Keywords), total=len(Keywords)):
         scaled_position = np.ceil((i / (len(Keywords) - 1)) * 100)
