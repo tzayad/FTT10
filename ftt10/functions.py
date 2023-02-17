@@ -252,7 +252,7 @@ def plot_winners(winner):
                          alpha=0.5)
 
         fig.tight_layout()  # otherwise the right y-label is slightly clipped
-        fig.savefig(fname='drive/MyDrive/Colab Notebooks/results/NASDAQ_' + winner['symbol'], dpi='300', format='png',
+        fig.savefig(fname='drive/MyDrive/Colab Notebooks/results/NASDAQ_' + winner['symbol'], dpi=300, format='png',
                     bbox_inches='tight')
     finally:
         plt.show()
