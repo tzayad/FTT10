@@ -1,24 +1,20 @@
-from setuptools import setup, find_packages
-
-VERSION = '0.0.1'
-DESCRIPTION = 'A conversion package'
-LONG_DESCRIPTION = 'A package that makes it easy to convert values between several units of measurement'
+from setuptools import setup
 
 setup(
-    name="convrsn",
-    version=VERSION,
-    description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
-    author="<Your Name>",
-    author_email="<your email>",
-    license='MIT',
-    packages=[fft10] # find_packages(),
-    install_requires=[],
-    keywords='conversion',
-    classifiers= [
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Developers",
-        'License :: OSI Approved :: MIT License',
-        "Programming Language :: Python :: 3",
-    ]
+    # Needed to silence warnings (and to be a worthwhile package)
+    name='ftt10',
+    url='https://github.com/jladan/package_demo',
+    author='John Ladan',
+    author_email='jladan@uwaterloo.ca',
+    # Needed to actually package something
+    packages=['ftt10'],
+    # Needed for dependencies
+    install_requires=['pytrends', 'yfinance'],
+    # *strongly* suggested for sharing
+    version='10.01',
+    # The license can be anything you like
+    license='MITULIM',
+    description='An example of a python package from pre-existing code',
+    # We will also need a readme eventually (there will be a warning)
+    # long_description=open('README.txt').read(),
 )
