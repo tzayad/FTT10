@@ -12,7 +12,7 @@ setup(
     author="<Your Name>",
     author_email="<your email>",
     license='MIT',
-    packages=find_packages(),
+    packages=[fft10] # find_packages(),
     install_requires=[],
     keywords='conversion',
     classifiers= [
